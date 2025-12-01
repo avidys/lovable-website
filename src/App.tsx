@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import EngagementModels from "./pages/EngagementModels";
 import OurImpact from "./pages/OurImpact";
 import Leadership from "./pages/Leadership";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,8 @@ const App = () => (
           <Route path="/engagement-models" element={<EngagementModels />} />
           <Route path="/our-impact" element={<OurImpact />} />
           <Route path="/leadership" element={<Leadership />} />
+          <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
+          <Route path="/Privacy-Policy.html" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
