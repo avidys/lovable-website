@@ -6,26 +6,49 @@ const Hero = () => {
   }, []);
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Animated background elements with enhanced effects */}
+      <style>{`
+        @keyframes float-horizontal {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(200px, -100px); }
+          66% { transform: translate(400px, -60px); }
+        }
+        @keyframes float-vertical {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(-200px, 200px); }
+          66% { transform: translate(-160px, 400px); }
+        }
+        @keyframes float-diagonal {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(240px, 160px); }
+          66% { transform: translate(440px, 240px); }
+        }
+        @keyframes float-reverse {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(-300px, 100px); }
+          66% { transform: translate(-400px, 60px); }
+        }
+        .orb-horizontal {
+          animation: float-horizontal 15s ease-in-out infinite;
+        }
+        .orb-vertical {
+          animation: float-vertical 18s ease-in-out infinite;
+        }
+        .orb-diagonal {
+          animation: float-diagonal 16s ease-in-out infinite;
+        }
+        .orb-reverse {
+          animation: float-reverse 17s ease-in-out infinite;
+        }
+      `}</style>
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float animate-pulse-glow" style={{
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow orb-horizontal" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow orb-vertical" style={{
         animationDelay: "2s"
       }} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl animate-float" style={{
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl orb-diagonal" style={{
         animationDelay: "4s"
       }} />
-        <div className="absolute bottom-1/3 left-1/2 w-80 h-80 bg-accent/15 rounded-full blur-3xl animate-float" style={{
-        animationDelay: "3s"
-      }} />
-        
-        {/* Particle-like elements */}
-        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-primary rounded-full animate-bounce-subtle" style={{
-        animationDelay: "1s"
-      }} />
-        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-accent rounded-full animate-bounce-subtle" style={{
-        animationDelay: "2s"
-      }} />
-        <div className="absolute top-2/3 left-2/3 w-2 h-2 bg-primary rounded-full animate-bounce-subtle" style={{
+        <div className="absolute bottom-1/3 left-1/2 w-80 h-80 bg-accent/15 rounded-full blur-3xl orb-reverse" style={{
         animationDelay: "3s"
       }} />
       </div>
@@ -63,43 +86,43 @@ const Hero = () => {
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto pt-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{
           animationDelay: "0.4s"
         }}>
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
-              <div className="relative p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
+              <div className="relative h-full p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 flex flex-col">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
                   40+
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground font-medium">Combined Years of Experience</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium flex-grow">Combined Years of Experience</div>
               </div>
             </div>
             
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
-              <div className="relative p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
+              <div className="relative h-full p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 flex flex-col">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
                   100%
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground font-medium">Hands-On Experience</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium flex-grow">Hands-On Experience</div>
               </div>
             </div>
             
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
-              <div className="relative p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
+              <div className="relative h-full p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 flex flex-col">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
                   300+
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground font-medium">Trials Managed</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium flex-grow">Trials Managed</div>
               </div>
             </div>
             
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
-              <div className="relative p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
-                <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow">
+              <div className="relative h-full p-4 md:p-6 lg:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 flex flex-col">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 animate-pulse-glow break-words">
                   Global
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground font-medium">Trial Experience</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium flex-grow">Trial Experience</div>
               </div>
             </div>
           </div>

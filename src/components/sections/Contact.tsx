@@ -43,7 +43,9 @@ const Contact = () => {
           </a>
 
           <a 
-            href="mailto:info@avidys.com"
+            href="https://www.avidys.net/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`group transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-10'}`}
             style={{ animationDelay: "0.3s" }}
           >
