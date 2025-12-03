@@ -8,6 +8,7 @@ import EngagementModels from "./pages/EngagementModels";
 import OurImpact from "./pages/OurImpact";
 import Leadership from "./pages/Leadership";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
           <Route path="/Privacy-Policy.html" element={<PrivacyPolicy />} />
+          <Route path="/sitemap.xml" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
