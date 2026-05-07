@@ -121,7 +121,6 @@ export default function Consent() {
             </div>
           )}
         </section>
-      </div>
     </div>
   );
 }
